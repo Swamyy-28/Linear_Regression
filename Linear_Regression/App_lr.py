@@ -17,7 +17,7 @@ def load_css (file):
     with open(file) as f:
         st.markdown(f"<style> {f.read()} <style>",unsafe_allow_html=True)
 
-load_css("style.css")
+load_css("..style.css")
 
 # --------------------------------------------------------------------------------------
 
@@ -123,4 +123,5 @@ bill=st.slider("Total Bill $",float(df.total_bill.min()),float(df.total_bill.max
 tip=model.predict(scaler.transform([[bill]]))[0]
 
 st.markdown(f'<div class="prediction_box"> Predict Tip $ {tip:.2f} </div>',unsafe_allow_html=True)
+
 st.markdown('</div>',unsafe_allow_html=True)
